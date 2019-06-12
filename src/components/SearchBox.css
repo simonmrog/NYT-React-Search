@@ -1,0 +1,43 @@
+* {
+   box-sizing: border-box;
+   margin: 0;
+}
+
+.search-box {
+   background-color: #DDDDDD;
+   margin: 30px auto;
+   padding: 30px 15px;
+   border: solid 2px black;
+   width: 85%;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+form {
+   margin: 0 auto;
+   width: 100%;
+}
+
+.column {
+   display: flex;
+   flex-direction: column;
+   flex-basis: 100%;
+}
+
+div input, select, button {
+   background-color: white;
+   border: solid 2px black;
+   margin-bottom: 20px;
+   padding: 5px;
+}
+
+div label {
+   padding-bottom: 7px;
+}
+
+.submit-button {
+   margin: 0 auto;
+   margin-top: 20px;
+   padding: 5px 20px;
+   box-shadow: 4px 4px 2px;
+}
