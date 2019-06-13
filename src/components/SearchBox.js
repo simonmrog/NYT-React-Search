@@ -1,5 +1,5 @@
 import React from "react";
-import "./SearchBox.css";
+import "../css/SearchBox.css";
 
 //We create a class-based-component as we need to manipulate states
 class SearchBox extends React.Component {
@@ -39,7 +39,7 @@ class SearchBox extends React.Component {
     if ((this.state.keywords).split(" ").join ("").length === 0)
       alert ("Please write a keyword for the search");
     else
-      this.props.onSubmit (this.state.keywords, this.state.material);
+      this.props.onSubmit (this.state.keywords, this.state.material, 0);
   }
 
   //Renders the page every time the state is updated
@@ -65,56 +65,56 @@ class SearchBox extends React.Component {
               onChange={this.onSelectChange}
               defaultValue="News"
             >
-              <option value="">Addendum</option>
-              <option value="">An Analysis</option>
-              <option value="">An Appraisal</option>
-              <option value="">Article</option>
-              <option value="">Banner</option>
-              <option value="">Biography</option>
-              <option value="">Birth Notice</option>
-              <option value="">Blog</option>
-              <option value="">Brief</option>
-              <option value="">Caption</option>
-              <option value="">Chronology</option>
-              <option value="">Column</option>
-              <option value="">Correction</option>
-              <option value="">Economic Analysis</option>
-              <option value="">Editorial</option>
-              <option value="">Editorial Cartoon</option>
-              <option value="">Editors' Note</option>
-              <option value="">First Chapter</option>
-              <option value="">Front Page</option>
-              <option value="">Glossary</option>
-              <option value="">Interactive Feature</option>
-              <option value="">Interactive Graphic</option>
-              <option value="">Interview</option>
-              <option value="">Letter</option>
-              <option value="">List</option>
-              <option value="">Marriage Announcement</option>
-              <option value="">Military Analysis</option>
+              <option value="Addendum">Addendum</option>
+              <option value="An%20Analysis">An Analysis</option>
+              <option value="An%20Appraisal">An Appraisal</option>
+              <option value="Article">Article</option>
+              <option value="Banner">Banner</option>
+              <option value="Biography">Biography</option>
+              <option value="Birth%20Notice">Birth Notice</option>
+              <option value="Blog">Blog</option>
+              <option value="Brief">Brief</option>
+              <option value="Caption">Caption</option>
+              <option value="Chronology">Chronology</option>
+              <option value="Column">Column</option>
+              <option value="Correction">Correction</option>
+              <option value="Economic%20Analysis">Economic Analysis</option>
+              <option value="Editorial">Editorial</option>
+              <option value="Editorial%20Cartoon">Editorial Cartoon</option>
+              <option value="Editors%27%20Note">Editors' Note</option>
+              <option value="First%20Chapter">First Chapter</option>
+              <option value="Front%20Page">Front Page</option>
+              <option value="Glossary">Glossary</option>
+              <option value="Interactive%20Feature">Interactive Feature</option>
+              <option value="Interactive%20Graphic">Interactive Graphic</option>
+              <option value="Interview">Interview</option>
+              <option value="Letter">Letter</option>
+              <option value="List">List</option>
+              <option value="Marriage%20Announcement">Marriage Announcement</option>
+              <option value="Military%20Analysis">Military Analysis</option>
               <option value="News">News</option>
-              <option value="">News Analysis</option>
-              <option value="">Newsletter</option>
-              <option value="">Obituary</option>
-              <option value="">Obituary (Obit)</option>
-              <option value="">Op-Ed</option>
-              <option value="">Paid Death Notice</option>
-              <option value="">Postscript</option>
-              <option value="">Premium</option>
-              <option value="">Question</option>
-              <option value="">Quote</option>
-              <option value="">Recipe</option>
-              <option value="">Review</option>
-              <option value="">Schedule</option>
-              <option value="">SectionFront</option>
-              <option value="">Series</option>
-              <option value="">Slideshow</option>
-              <option value="">Special Report</option>
-              <option value="">Statistics</option>
-              <option value="">Summary</option>
-              <option value="">Text</option>
-              <option value="">Video</option>
-              <option value="">Web Log</option>
+              <option value="News%20Analysis">News Analysis</option>
+              <option value="Newsletter">Newsletter</option>
+              <option value="Obituary">Obituary</option>
+              <option value="Obituary%20%28Obit%29">Obituary (Obit)</option>
+              <option value="Op%2DEd">Op-Ed</option>
+              <option value="Paid%20Death%20Notice">Paid Death Notice</option>
+              <option value="Postscript">Postscript</option>
+              <option value="Premium">Premium</option>
+              <option value="Question">Question</option>
+              <option value="Quote">Quote</option>
+              <option value="Recipe">Recipe</option>
+              <option value="Review">Review</option>
+              <option value="Schedule">Schedule</option>
+              <option value="SectionFront">SectionFront</option>
+              <option value="Series">Series</option>
+              <option value="Slideshow">Slideshow</option>
+              <option value="Special%20Report">Special Report</option>
+              <option value="Statistics">Statistics</option>
+              <option value="Summary">Summary</option>
+              <option value="Text">Text</option>
+              <option value="Video">Video</option>
+              <option value="Web%20Log">Web Log</option>
             </select>
           </div>
           <div className="column">

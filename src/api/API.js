@@ -1,5 +1,3 @@
-
-
 const API = {
 
   getArticles (keywords, material) {

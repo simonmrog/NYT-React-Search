@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.article {
+  text-align: justify;
+  margin-bottom: 20px;
+  max-width: 100%;
+  font-family: 'Georgia', sans-serif;
+  font-size: 0.9em;
+}
+
+.article > * {
+  padding: 3px;
+}
+
+.anchor, a {
+  color: #06668F;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 576px) {
+
+  .hidden {
+    display: block;
+  }
+}

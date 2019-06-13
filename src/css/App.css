@@ -4,9 +4,8 @@
 }
 
 .main-wrapper {
-
-  margin: 30px 15px;
-
+  margin: 40px 0;
+  padding: 20px;
 }
 
 .logo-wrapper {
@@ -17,4 +16,10 @@
   display: block;
   margin: 0 auto;
   width: 60%;
+}
+
+.more-button {
+  margin-top: 10px;
+  box-shadow: 4px 4px 2px;
+  padding: 2px 40px;
 }
