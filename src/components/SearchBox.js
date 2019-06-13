@@ -7,7 +7,7 @@ class SearchBox extends React.Component {
   constructor (props) {
     super (props);
     //State corresponds to the text in the input and the chose in the select
-    this.state = {keywords: "", material: ""};
+    this.state = {keywords: "", material: "", onTop: 0};
 
     //Creating reference to access to the default value of the select
     this.select = React.createRef ();
@@ -16,7 +16,9 @@ class SearchBox extends React.Component {
   //Changing state to capture the default value of the select
   //This is done in case the user never changes the option
   componentDidMount = () => {
-    this.setState ({material: this.select.current.value}); 
+    this.setState ({
+      material: this.select.current.value,
+    }); 
   }
 
   //Updates state every time the user enters some text to the input
@@ -38,18 +40,25 @@ class SearchBox extends React.Component {
     //spaces
     if ((this.state.keywords).split(" ").join ("").length === 0)
       alert ("Please write a keyword for the search");
-    else
+    else {
+      this.setState ({onTop: 1}); // This means the component has been mounted and the
+      //next time it renders should render on top (with the article list)
       this.props.onSubmit (this.state.keywords, this.state.material, 0);
+    }
   }
 
   //Renders the page every time the state is updated
   render () {
 
     return (
-      <div className="search-box">
-        <form onSubmit={this.searchArticles}>
+      <div className={this.state.onTop ? "search-box on-top" : "search-box"}>
+        <form
+          className={this.state.onTop ? "on-top" : ""}
+          onSubmit={this.searchArticles}>
           <div className="col col-lg-6 keywords-div">
-            <label htmlFor="keywords">Keywords</label>
+            <label
+              className={this.state.onTop ? "on-top" : ""} 
+              htmlFor="keywords">Keywords</label>
             <input
               id="keywords"
               type="text"
@@ -57,11 +66,13 @@ class SearchBox extends React.Component {
               onChange={this.onInputChange}
             />
           </div>
-          <div className="col col-lg-4 material-div">
-            <label>Types of Material</label>
+          <div 
+            className={this.state.onTop ? "col col-lg-4 material-div on-top" : "col col-lg-4 material-div"}>
+            <label className={this.state.onTop ? "on-top" : ""}>
+              Types of Material
+            </label>
             <select
               ref={this.select}
-              /*value={this.state.material}*/
               onChange={this.onSelectChange}
               defaultValue="News"
             >
@@ -117,8 +128,13 @@ class SearchBox extends React.Component {
               <option value="Web%20Log">Web Log</option>
             </select>
           </div>
-          <div className="col col-lg-2">
-            <button className="button submit-button">Search</button>
+          <div
+            className={this.state.onTop ? "col col-lg-2 on-top" : "col col-lg-2"}>
+            <button
+              className={this.state.onTop ? "button submit-button on-top"
+              : "button submit-button"}>
+              Search
+            </button>
           </div>
         </form>
       </div>

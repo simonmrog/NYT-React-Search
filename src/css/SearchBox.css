@@ -12,7 +12,26 @@
    width: 100%;
 }
 
+.search-box.on-top {
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 100%;
+   margin-top: 0;
+   padding: 20px;
+   padding-bottom: 0;
+   border-left: none;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+label.on-top {
+   display: none;
+}
+
 form {
+   display: flex;
+   flex-wrap: wrap;
    margin: 0 auto;
    width: 100%;
 }
@@ -21,6 +40,11 @@ form {
    display: flex;
    flex-direction: column;
    width: 100%;
+}
+
+.col.on-top {
+   display: inline-block;
+   width: auto;
 }
 
 div input, select, button {
@@ -36,16 +60,22 @@ div label {
 
 .submit-button {
    margin: 0 auto;
-   margin-top: 20px;
+   margin-top: 25px;
    padding: 5px 20px;
    box-shadow: 4px 4px 2px;
 }
 
+.submit-button.on-top {
+   margin-top: 0;
+   margin-left: 10px;
+}
+
 @media (min-width: 576px) {
 
-   .col {
-      display: inline-block;
+   form.on-top {
+      align-items: baseline;
    }
+
    .col > * {
       width: 90%;
    }
@@ -66,11 +96,20 @@ div label {
       width: 85%;
    }
 
+   .search-box.on-top {
+      width: 86%;
+   }
+
    .keywords-div {
       width: 50%;
    }
 
    .material-div {
       width: 30%;
+   }
+
+   .submit-button.on-top {
+      margin-top: 40px;
+      margin-left: 20px;
    }
 }

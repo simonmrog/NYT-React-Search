@@ -54,17 +54,19 @@ class App extends React.Component {
   renderContent = () => {
 
     return (
-      <div className="main-wrapper">
-        <div className="logo-wrapper">
-          <img alt="logo" src={logo} />
-        </div>
-        <SearchBox onSubmit={this.onSearchSubmit}/> 
+      <div className={this.state.status ? "main-wrapper with-content" : "main-wrapper"}>
+        <header className={this.state.status ? "with-content" : ""}>
+          <div className={this.state.status ? "logo-wrapper hidden-content with-content" : "logo-wrapper"}>
+            <img alt="logo" src={logo} />
+          </div>
+          <SearchBox onSubmit={this.onSearchSubmit}/> 
+        </header>
         <div className={this.state.status ? "" : "hidden-content"}>
           <ArticleList
             onSubmit={this.onSearchSubmit}
             content={this.state.articles}
           />
-          <label>Displaying {this.state.offset + 10} results of {this.state.hits} found.</label>
+          <label className="message">Displaying {this.state.offset + 10} results of {this.state.hits} found.</label>
           <button className="button more-button" onClick={this.showMore}>Get More News</button>
         </div>
       </div>
