@@ -63,7 +63,7 @@ class App extends React.Component {
     else
       return (
         <div className="main-wrapper">
-          <SearchBox onSubmit={this.onSearchSubmit}/>
+          <SearchBox className="on-top" onSubmit={this.onSearchSubmit}/>
           <ArticleList
             onSubmit={this.onSearchSubmit}
             content={this.state.articles}

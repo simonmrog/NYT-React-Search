@@ -48,7 +48,7 @@ class SearchBox extends React.Component {
     return (
       <div className="search-box">
         <form onSubmit={this.searchArticles}>
-          <div className="column">
+          <div className="column keywords">
             <label htmlFor="keywords">Keywords</label>
             <input
               id="keywords"
@@ -57,7 +57,7 @@ class SearchBox extends React.Component {
               onChange={this.onInputChange}
             />
           </div>
-          <div className="column">
+          <div className="column material">
             <label>Types of Material</label>
             <select
               ref={this.select}

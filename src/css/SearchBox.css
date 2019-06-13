@@ -42,3 +42,18 @@ div label {
    padding: 5px 20px;
    box-shadow: 4px 4px 2px;
 }
+
+@media (min-width: 576px) {
+
+   .search-box {
+      width: 85%;
+   }
+
+   .keywords {
+      flex-basis: 60%;
+   }
+
+   .material {
+      flex-basis: 30%;
+   }
+}
