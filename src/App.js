@@ -38,7 +38,7 @@ class App extends React.Component {
       .then (response => response.json())
       .then ((data) => {
           this.setState ({
-            articles: data.response.docs,
+            articles: this.state.articles.concat (data.response.docs),
             hits: data.response.meta.hits,
             status: 1,
             keywords: keywords,

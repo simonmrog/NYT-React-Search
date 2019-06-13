@@ -31,7 +31,7 @@
 }
 
 .on-top {
-  background-color: black;
+  display: none;
 }
 
 @media (min-width: 576px) {
