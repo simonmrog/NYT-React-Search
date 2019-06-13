@@ -69,7 +69,7 @@ class App extends React.Component {
             content={this.state.articles}
           />
           <label>Displaying {this.state.offset + 10} results of {this.state.hits} found.</label>
-          <button className="more-button" onClick={this.showMore}>Get More News</button>
+          <button className="button more-button" onClick={this.showMore}>Get More News</button>
         </div>
       );
   }

@@ -118,7 +118,7 @@ class SearchBox extends React.Component {
             </select>
           </div>
           <div className="column">
-            <button className="submit-button">Search</button>
+            <button className="button submit-button">Search</button>
           </div>
         </form>
       </div>

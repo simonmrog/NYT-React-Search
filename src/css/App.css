@@ -23,3 +23,15 @@
   box-shadow: 4px 4px 2px;
   padding: 2px 40px;
 }
+
+.button:active {
+  background-color: #06668F;
+  color: white;
+}
+
+@media (min-width: 576px) {
+
+  label {
+    display: block;
+  }
+}

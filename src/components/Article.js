@@ -5,6 +5,10 @@ import "../css/Article.css";
 const Article = (props) => {
 
   const content = props.content;
+  let thumbnail = "";
+  
+  if (content.multimedia.length > 0)
+    thumbnail = "https://www.nytimes.com/" + content.multimedia[0].url;
 
   //Transforms the keyword object array to a string array with keywords
   const keywordsArray = content.keywords.map ((keywordsObject) => {
@@ -34,14 +38,17 @@ const Article = (props) => {
   return (
     <div className="article">
       <div className="thumbnail hidden">
+        <img alt="thumbnail" src={thumbnail} />
       </div>
-      <div className="headline">
-        <a href={content.web_url}><h3>{content.headline.main}</h3></a>
+      <div className="content">
+        <div className="headline">
+          <a href={content.web_url}><h3>{content.headline.main}</h3></a>
+        </div>
+        <p className="snippet hidden">{content.snippet}</p>
+        <p className="source"><strong>Source: </strong>{content.source}</p>
+        <p className="date"><strong>Published: </strong>{content.pub_date}</p>
+        <div className="keywords hidden">{keywords (keywordsArray)}</div>
       </div>
-      <p className="snippet hidden">{content.snippet}</p>
-      <p className="source"><strong>Source: </strong>{content.source}</p>
-      <p className="date"><strong>Published: </strong>{content.pub_date}</p>
-      <div className="keywords hidden">{keywords (keywordsArray)}</div>
     </div>
   );
 }

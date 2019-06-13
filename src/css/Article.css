@@ -10,10 +10,13 @@
   max-width: 100%;
   font-family: 'Georgia', sans-serif;
   font-size: 0.9em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
-.article > * {
-  padding: 3px;
+.article > div > * {
+  padding: 2px;
 }
 
 .anchor, a {
@@ -22,13 +25,33 @@
   cursor: pointer;
 }
 
+.content {
+  flex-basis: 100%;
+}
+
 .hidden {
   display: none;
 }
 
 @media (min-width: 576px) {
 
+  .thumbnail {
+    flex-basis: 18%;
+  }
+  
+  .thumbnail img {
+    width: 100%;
+  }
+
+  .content {
+    padding-left: 15px;
+  }
+
   .hidden {
     display: block;
+  }
+
+  img.hidden {
+    display: inline-block;
   }
 }
