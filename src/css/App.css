@@ -11,8 +11,6 @@
 .logo-wrapper {
   width: 100%;
   margin: 0 auto;
-  margin-top: 30px;
-  margin-bottom: 70px;
 }
 
 .logo-wrapper img {
@@ -43,6 +41,8 @@
   }
 
   .logo-wrapper {
+    margin-top: 30px;
+    margin-bottom: 70px;
     width: 35%;
   }
 }
