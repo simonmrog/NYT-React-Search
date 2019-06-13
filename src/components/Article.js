@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../css/Article.css";
+import "../css/Article.css"; //Styles for this component
 
 const Article = (props) => {
 

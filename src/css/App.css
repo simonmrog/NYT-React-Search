@@ -1,3 +1,8 @@
+/* THE WITH-CONTENT-CLASS REFERS TO THE SECOND VIEW, I.E. 
+WHEN THE USER MADE A SEARCH AND HAS A LIST OF ARTICLES IN THE SCREEN. */
+
+/* MOBILE VERSION FIRST */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -41,6 +46,8 @@ header {
 .hidden-content {
   display: none;
 }
+
+/* TABLET AND LAPTOP VERSION */
 
 @media (min-width: 576px) {
 

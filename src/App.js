@@ -13,6 +13,10 @@ class App extends React.Component {
   constructor (props) {
     super (props);
 
+    // The state has the articles array, the number of articles found
+    //the status which tells whether the user made the first search
+    //Also contains the keywords array, the material type and the offset
+    //To carry the number of articles and the page we need to fetch from the API.
     this.state = {
       articles: [],
       hits: 0,
@@ -25,6 +29,8 @@ class App extends React.Component {
 
   showMore = () => {
 
+    // Event function for the form, sends the offset divided by ten, which
+    // corresponds to the number of the page we're looking for in the API
     this.onSearchSubmit (
       this.state.keywords,
       this.state.material,
@@ -34,6 +40,9 @@ class App extends React.Component {
 
   onSearchSubmit = (keywords, material, page) => {
 
+    // We return from the API class the promise from the fetch function.
+    // then and catch functions are implemented, the first one to update
+    // the state every time the user make a search.
     API.getArticles (keywords, material, page)
       .then (response => response.json())
       .then ((data) => {
@@ -53,6 +62,10 @@ class App extends React.Component {
 
   renderContent = () => {
 
+    //Using conditional components the render is made. We use the 
+    //status variable of state to control wheather the user made 
+    //first search
+
     return (
       <div className={this.state.status ? "main-wrapper with-content" : "main-wrapper"}>
         <header className={this.state.status ? "with-content" : ""}>
@@ -65,7 +78,9 @@ class App extends React.Component {
           <ArticleList
             onSubmit={this.onSearchSubmit}
             content={this.state.articles}
-          />
+          /> 
+          {/* Using the offset variable of state the number of articles is
+          controlled */}
           <label className="message">Displaying {this.state.offset + 10} results of {this.state.hits} found.</label>
           <button className="button more-button" onClick={this.showMore}>Get More News</button>
         </div>

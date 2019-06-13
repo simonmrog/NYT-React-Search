@@ -1,3 +1,8 @@
+/* THE ON-TOP-CLASS IS USTED TO STYLE THE SECOND VIEW, WHEN THE USER MADE
+A SEARCH AND HAS A LIST OF ARTICLES. */
+
+/* MOBILE VERSION FIRST */
+
 * {
    box-sizing: border-box;
    padding: 0;
@@ -70,6 +75,7 @@ div label {
    margin-left: 10px;
 }
 
+/* TABLET AND LAPTOP VERSION */
 @media (min-width: 576px) {
 
    form.on-top {

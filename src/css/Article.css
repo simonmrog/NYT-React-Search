@@ -1,3 +1,5 @@
+/* MOBILE VERSION FIRST */
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -34,6 +36,7 @@
   display: none;
 }
 
+/* TABLET AND LAPTOP VERSION */
 @media (min-width: 576px) {
 
   .thumbnail {

@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/SearchBox.css";
+import "../css/SearchBox.css"; //Styles for this component
 
 //We create a class-based-component as we need to manipulate states
 class SearchBox extends React.Component {
@@ -49,6 +49,9 @@ class SearchBox extends React.Component {
 
   //Renders the page every time the state is updated
   render () {
+
+    //in the render function, conditional classNames are usted to control
+    //the view before and after the first search.
 
     return (
       <div className={this.state.onTop ? "search-box on-top" : "search-box"}>
