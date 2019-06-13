@@ -26,9 +26,9 @@ class App extends React.Component {
   showMore = () => {
 
     this.onSearchSubmit (
-      this.keywords,
-      this.material,
-      (this.offset + 10) / 10
+      this.state.keywords,
+      this.state.material,
+      (this.state.offset + 10) / 10
     );
   }
 
