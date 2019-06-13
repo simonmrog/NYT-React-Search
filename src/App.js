@@ -38,7 +38,9 @@ class App extends React.Component {
       .then (response => response.json())
       .then ((data) => {
           this.setState ({
-            articles: this.state.articles.concat (data.response.docs),
+            articles: page > 0 ?
+              this.state.articles.concat (data.response.docs)
+              : data.response.docs,
             hits: data.response.meta.hits,
             status: 1,
             keywords: keywords,
@@ -51,19 +53,13 @@ class App extends React.Component {
 
   renderContent = () => {
 
-    if (this.state.status === 0)
     return (
       <div className="main-wrapper">
-          <div className="logo-wrapper">
-            <img alt="logo" src={logo} />
-          </div>
-        <SearchBox onSubmit={this.onSearchSubmit}/>
-      </div>
-      );
-    else
-      return (
-        <div className="main-wrapper">
-          <SearchBox className="on-top" onSubmit={this.onSearchSubmit}/>
+        <div className="logo-wrapper">
+          <img alt="logo" src={logo} />
+        </div>
+        <SearchBox onSubmit={this.onSearchSubmit}/> 
+        <div className={this.state.status ? "" : "hidden-content"}>
           <ArticleList
             onSubmit={this.onSearchSubmit}
             content={this.state.articles}
@@ -71,8 +67,10 @@ class App extends React.Component {
           <label>Displaying {this.state.offset + 10} results of {this.state.hits} found.</label>
           <button className="button more-button" onClick={this.showMore}>Get More News</button>
         </div>
-      );
+      </div>
+    );
   }
+
   render () {
     return (<div>{this.renderContent () }</div>);
   }
