@@ -1,18 +1,14 @@
 import React from "react";
-
-import API from "./api/API";
+import API from "./api/Api";
 import SearchBox from "./components/SearchBox";
 import ArticleList from "./components/ArticleList"
-
 import "./css/App.css";
-
 import logo from "./images/nyt-logo.png";
 
 class App extends React.Component {
 
   constructor (props) {
     super (props);
-
     // The state has the articles array, the number of articles found
     //the status which tells whether the user made the first search
     //Also contains the keywords array, the material type and the offset
@@ -28,7 +24,6 @@ class App extends React.Component {
   }
 
   showMore = () => {
-
     // Event function for the form, sends the offset divided by ten, which
     // corresponds to the number of the page we're looking for in the API
     this.onSearchSubmit (
@@ -39,13 +34,14 @@ class App extends React.Component {
   }
 
   onSearchSubmit = (keywords, material, page) => {
-
     // We return from the API class the promise from the fetch function.
     // then and catch functions are implemented, the first one to update
     // the state every time the user make a search.
     API.getArticles (keywords, material, page)
       .then (response => response.json())
       .then ((data) => {
+          console.log (data.response.docs);
+          console.log (data.response.docs.length);
           this.setState ({
             articles: page > 0 ?
               this.state.articles.concat (data.response.docs)
@@ -54,18 +50,17 @@ class App extends React.Component {
             status: 1,
             keywords: keywords,
             material: material,
-            offset: page * 10
+            offset: data.response.docs.length > 0 ?
+              page * 10 : this.state.offset
           });
       })
       .catch (err => alert (err));
   }
 
-  renderContent = () => {
-
+  render () {
     //Using conditional components the render is made. We use the 
     //status variable of state to control wheather the user made 
     //first search
-
     return (
       <div className={this.state.status ? "main-wrapper with-content" : "main-wrapper"}>
         <header className={this.state.status ? "with-content" : ""}>
@@ -86,10 +81,6 @@ class App extends React.Component {
         </div>
       </div>
     );
-  }
-
-  render () {
-    return (<div>{this.renderContent () }</div>);
   }
 }
 

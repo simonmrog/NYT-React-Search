@@ -8,7 +8,6 @@ class SearchBox extends React.Component {
     super (props);
     //State corresponds to the text in the input and the chose in the select
     this.state = {keywords: "", material: "", onTop: 0};
-
     //Creating reference to access to the default value of the select
     this.select = React.createRef ();
   }
@@ -39,7 +38,7 @@ class SearchBox extends React.Component {
     //This is done by spliting the array and joining it again withous
     //spaces
     if ((this.state.keywords).split(" ").join ("").length === 0)
-      alert ("Please write a keyword for the search");
+      alert ("Please write a keyword for the search");  
     else {
       this.setState ({onTop: 1}); // This means the component has been mounted and the
       //next time it renders should render on top (with the article list)

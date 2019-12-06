@@ -1,22 +1,20 @@
 import React from "react";
-
 import "../css/Article.css"; //Styles for this component
 
-const Article = (props) => {
+const Article = ({content, onSubmit}) => {
 
-  const content = props.content;
   let thumbnail = "";
-  
-  if (content.multimedia.length > 0)
-    thumbnail = "https://www.nytimes.com/" + content.multimedia[0].url;
-
   //Transforms the keyword object array to a string array with keywords
   const keywordsArray = content.keywords.map ((keywordsObject) => {
     return (keywordsObject.value + ",");
   });
 
+  if (content.multimedia.length > 0)
+    thumbnail = "https://www.nytimes.com/" + content.multimedia[0].url;
+
+
   const searchByKeyword = (event) => {
-    props.onSubmit (event.target.innerHTML, "News", 0);
+    onSubmit (event.target.innerHTML, "News", 0);
   }
 
   //This function will generate the list of anchors for the keywords
